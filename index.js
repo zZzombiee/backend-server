@@ -2,7 +2,7 @@ import express from "express";
 
 const app = express();
 
-app.use(express.json);
+app.use(express.json());
 
 const port = 8080;
 
@@ -11,6 +11,7 @@ app.get("/articles", (request, response) => {
 });
 
 app.post("/addArticles", (request, response) => {
+  console.log(request);
   const { title } = request.body;
   response.send(`Product successfully added ${title}`);
 });
